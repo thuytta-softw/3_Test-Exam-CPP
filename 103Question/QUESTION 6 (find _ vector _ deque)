@@ -1,0 +1,62 @@
+
+QUESTION 6 (find _ vector _ deque)
+
+//#include<bits/stdc++.h>
+
+#include <iostream>
+#include <algorithm> // find
+#include <vector>  // vector
+#include <deque>
+
+ using namespace std;
+
+ int main() {
+ int t[] = { 10, 5, 9, 6, 2, 4, 7, 8, 3, 1 };
+ vector<int> v(t, t + 10);
+ deque<int> d(t, t+10);
+
+ int ser = 6;
+ //vector<int>::iterator it; = auto it;
+  auto it_v = find (v.begin(), v.end(), ser);
+  auto it_d = find (d.begin(), d.end(), ser);
+
+    if (it_v != v.end())
+    {
+        cout << "Element " << ser <<" found at position : " ;
+        cout << it_v - v.begin() + 1 << "\n" ;
+    }
+    if (it_d != d.end())
+    {
+        cout << "Element " << ser <<" found at position : " ;
+        cout << it_d - d.begin() + 1 << "\n" ;
+    }
+
+ return 0;
+ }
+
+
+QUESTION 6
+What happens when you attempt to compile and run the following code?
+ include <iostream>
+ #include <algorithm>
+ #include <vector>
+ #include <deque>
+ #include <set>
+ using namespace std;
+ int main() {
+ int t[] = { 10, 5, 9, 6, 2, 4, 7, 8, 3, 1 };
+ vector<int> v1(t, t + 10);
+http://www.gratisexam.com/
+ deque<int> d1(t, t + 10);
+ set<int> s1(t, t + 10);
+ cout<<find(v1.begin(), v1.end(), 6)<<" "<<find(d1.begin(), d1.end(), 6)<<" "<<find(s1.begin(), s1.end(), 6);
+ return 0;
+ }
+A. program outputs: 6 6 6
+B. program outputs: 3 3 5
+C. program outputs: 3 6 5
+D. compilation error
+E. none of these
+
+Correct Answer:D
+
