@@ -1,0 +1,27 @@
+
+QUESTION 8
+What happens when you attempt to compile and run the following code?
+   #include <iostream>
+   using namespace std;
+   void g(int a)
+   {
+       cout<<a-1<<endl;
+   }
+   template<class A>
+   void g(A a)
+   {
+       cout<<a+1<<endl;
+   }
+   int main()
+   {
+
+       int a = 1;
+       g(a);
+       return 0;
+   }
+A. program displays: 0
+B. program displays: 2
+C. compilation error
+D. runtime exception
+
+Correct Answer:A
