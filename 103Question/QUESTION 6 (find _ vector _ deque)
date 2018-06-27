@@ -17,8 +17,12 @@ QUESTION 6 (find _ vector _ deque)
 
  int ser = 6;
  //vector<int>::iterator it; = auto it;
+ // vector<int>::iterator it_v = find (v.begin(), v.end(), ser);
+ // deque<int>::iterator it_d = find (d.begin(), d.end(), ser);
+  
   auto it_v = find (v.begin(), v.end(), ser);
   auto it_d = find (d.begin(), d.end(), ser);
+ 
 
     if (it_v != v.end())
     {
@@ -37,21 +41,26 @@ QUESTION 6 (find _ vector _ deque)
 
 QUESTION 6
 What happens when you attempt to compile and run the following code?
- include <iostream>
+
+#include <iostream>
  #include <algorithm>
  #include <vector>
  #include <deque>
  #include <set>
  using namespace std;
+
  int main() {
- int t[] = { 10, 5, 9, 6, 2, 4, 7, 8, 3, 1 };
- vector<int> v1(t, t + 10);
-http://www.gratisexam.com/
- deque<int> d1(t, t + 10);
- set<int> s1(t, t + 10);
- cout<<find(v1.begin(), v1.end(), 6)<<" "<<find(d1.begin(), d1.end(), 6)<<" "<<find(s1.begin(), s1.end(), 6);
+ int t[] = { 10, 5, 9, 6, 2, 4, 7, 8, 3, 1 }; //array
+ vector<int> v1(t, t + 10); //vector
+ deque<int> d1(t, t + 10); //deque
+ set<int> s1(t, t + 10); //set
+
+ cout<<find (v1.begin(), v1.end(), 6);//error: no match for operator<<
+ cout<<" "<<find(d1.begin(), d1.end(), 6)<<" "<<find(s1.begin(), s1.end(), 6); //error: no match for operator<<
+
  return 0;
  }
+ 
 A. program outputs: 6 6 6
 B. program outputs: 3 3 5
 C. program outputs: 3 6 5
