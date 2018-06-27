@@ -1,0 +1,33 @@
+
+QUESTION 5
+What happens when you attempt to compile and run the following code?
+
+#include <vector>
+#include <iostream>
+int main ()
+{
+
+    std::vector<int>v1;
+    for(int i = 10; i>0; i--)
+    {
+        v1.push_back(i);
+    }
+    std::vector<int>::iterator it = v1.begin();
+    int sum = 0;
+    while(it != v1.end())
+    {
+        sum += it++; // error: int += vector
+    }
+    std::cout<<*v1.erase(v1.begin(),v1.end()?3)<<" "<<sum <<std::endl;
+    return 0;
+}
+
+
+error: no match for 'operator+=' (operand types are 'int' and '__gnu_cxx::__normal_iterator<int*, std::vector<int> >')
+
+A. program outputs 3 55
+B. compilation error
+C. program outputs 3 45
+D. program outputs 7 55
+
+Correct Answer:B
