@@ -57,6 +57,7 @@ What happens when you attempt to compile and run the following code?
  deque<int> d1(t, t + 10);
  set<int> s1(t, t + 10);
  
+ // it will run if we change display --> display()
  for_each(v1.begin(), v1.end(), display); //Line I
  for_each(d1.begin(), d1.end(), *(new display())); // Line II
  for_each(s1.begin(), s1.end(), display()); // Line III
