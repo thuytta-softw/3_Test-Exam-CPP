@@ -1,0 +1,27 @@
+
+QUESTION 23
+
+What happens when you attempt to compile and run the following code?
+ #include <iostream>
+ using namespace std;
+ 
+ int main()
+ {
+ cout<<true<<" "<<boolalpha<<false; // => 1 false
+ 
+ /*
+ cout<<true<<" "<<false; // => 1  0
+ cout<<boolalpha<<true<<" "<<boolalpha<<false; // => true  false
+ */
+ 
+ return 0;
+ }
+ 
+Program outputs:
+A. true false
+B. 1 0
+C. 1 false
+D. true 0
+E. compilation error
+
+Correct Answer:C
