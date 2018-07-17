@@ -1,0 +1,37 @@
+
+QUESTION 40
+What happens when you attempt to compile and run the following code?
+
+ #include <iostream>
+ #include <map>
+ #include <vector>
+ #include <string>
+ using namespace std;
+ 
+ int main(){
+   int second[] ={ 3, 4, 2, 1, 6, 5, 7, 9, 8,0 }; // array int
+   string first[] = {"three", "four", "two", "one", "six","five", "seven", "nine","eight","zero"}; // array string
+   
+   map<int,string> m;
+   
+   for(int i=0; i<10; i++) {
+      m.insert(pair<int,string>(second[i],first[i]));
+   }
+   
+   m[0]="ten"; // force 0 = ten
+   
+   m.insert(pair<int,string>(1,"eleven")); // ignore insert duplicate key (we already have key 1)
+   
+   for(map<int, string>::iterator i=m.begin();i!= m.end(); i++) {
+      cout<<i?>second<<" ";
+   }
+ return 0;
+ }
+ 
+A. program outputs: zero one two three four five six seven eight nine
+B. program outputs: ten one two three four five sixseven eight nine
+C. program outputs: zero eleven two three four fivesix seven eight nine
+D. program outputs: ten eleven two three four five six seven eight nine
+E. program outputs: 0 1 2 3 4 5 6 7 8 9
+
+Correct Answer:B
