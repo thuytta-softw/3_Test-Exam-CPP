@@ -11,15 +11,17 @@ assuming that you enter the following sequence: true false<enter>?
  int main ()
  {
    bool a,b;
-   cin>>boolalpha>>a>>b;
-   cout<<a<<b<<endl;
+   cin>>boolalpha>>a>>b; //=>  true false <enter>
+   cout<<a<<b<<endl; //=> 10
  return 0;
  }
+ 
 Program will output:
 A. truefalse
 B. true0;
 C. 1false
 D. 10
 E. none of these
+
 Correct Answer:D
 
