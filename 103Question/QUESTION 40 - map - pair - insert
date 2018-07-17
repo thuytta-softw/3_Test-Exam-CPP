@@ -18,7 +18,7 @@ What happens when you attempt to compile and run the following code?
       m.insert(pair<int,string>(second[i],first[i]));
    }
    
-   m[0]="ten"; // force 0 = ten
+   m[0]="ten"; // force 0 = ten => some kind of array
    
    m.insert(pair<int,string>(1,"eleven")); // ignore insert duplicate key (we already have key 1)
    
