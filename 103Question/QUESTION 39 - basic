@@ -1,0 +1,24 @@
+
+QUESTION 39
+What will happen when you attempt to compile and run the code below, 
+assuming you enter the followingsequence: 1 2 3<enter>?
+
+ #include <iostream>
+ using namespace std;
+ 
+ int main ()
+ {
+   int a,b,c;
+   cin>>a>>b>>c;
+   cout<<a<<b<<c<<endl; //=> 123
+   return 0;
+ }
+ 
+Program will output:
+A. 123
+B.1 2 3
+C.321
+D. compilation error
+E. the result is unspecified
+
+Correct Answer:A
