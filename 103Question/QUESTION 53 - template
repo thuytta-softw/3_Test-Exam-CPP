@@ -1,0 +1,12 @@
+
+QUESTION 53
+
+Which keywords can be used to define template typeparameters? Choose all possible answers:
+
+A.class
+B.typedef
+C. typename
+D. static
+E. volatile
+
+Correct Answer:AC
