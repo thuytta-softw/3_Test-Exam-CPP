@@ -1,0 +1,33 @@
+
+
+QUESTION 59
+What happens when you attempt to compile and run the following code?
+
+ #include <iostream>
+ using namespace std;
+ 
+ template<int> // wrong template <int <anonymous>>
+ void g(int a) // not cal this void
+ {
+    cout<<a-1<<endl;
+ }
+ 
+ template<class A> // correct template
+ void g(A a) // cal this void 
+ {
+    cout<<a+1<<endl;
+ }
+ 
+ int main()
+ {
+   int a = 1;
+   g(a); 
+   return 0;
+ }
+ 
+A. program displays: 1
+B. program displays: 2
+C. compilation error
+D. runtime exception
+
+Correct Answer:B
