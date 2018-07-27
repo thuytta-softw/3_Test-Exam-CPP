@@ -1,4 +1,36 @@
 
+QUESTION 7
+What happens when you attempt to compile and run the following code?
+
+#include <iostream>
+#include <vector>     // vector
+#include <list>       //list
+
+using namespace std;
+
+int main()
+{
+    int t[]={1,2,3,4,5};
+    vector<int> v1(t,t+5);
+    list<int> li;
+    li.assign(v1.end(),v1.begin()); -> there is not assign anything from end() to begin()
+    //li.assign(v1.begin(),v1.end()); //-> correct is: assign from begin() to end()
+ 
+    for(int i=0; i<l1.size() ;i++)
+       cout<<l1.at(i)<< " " ; // compilation error -> there is no list.at() method
+ 
+    cout<<endl;
+    return 0;
+}
+
+A. program displays 5 4 3 2 1
+B. program displays 1 2 3 4 5
+C. compilation error
+D. segmentation fault runtime exception
+
+Correct Answer: C
+
+
 /*Thuy Ta*/
 
 #include <iostream>
