@@ -15,8 +15,8 @@ What happens when you attempt to compile and run the following code?
  };
  int main () {
  int t[] = {1,2,3,2,3,5,1,2,7,3,2,1,10, 4,4,5};
- set<A> s (t,t+15); // => s = {1 2 3 4 5 7 10}
- cout<<equal(s.begin(), s.end(), t)<<endl; => t.size() = 16, s.size() = 7 -> false = 0
+ set<A> s (t,t+15); // => s = {1 2 3 4 5 7 10} -> not show a duplicate
+ cout<<equal(s.begin(), s.end(), t)<<endl; => t = 16 element, s = 7 element -> false = 0
  return 0;
  }
  
