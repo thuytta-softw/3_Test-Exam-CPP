@@ -1,0 +1,24 @@
+
+QUESTION 4
+What will happen when you attempt to compile and run the code below, assuming that you enter the following sequence: one two three<enter>?
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main ()
+{
+    string a;
+    cin>>a;
+    cout<< a << endl;
+    return 0;
+}
+
+Program will output:
+A. one
+B. one two three
+C. runtime exception
+D. compilation error
+E. the result is unspecified
+
+Correct Answer: A
