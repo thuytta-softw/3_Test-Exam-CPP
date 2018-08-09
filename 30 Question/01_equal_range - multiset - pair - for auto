@@ -44,3 +44,55 @@ output:
 6 6 // range
 0 0 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 // multiset
 3 4 2 1 6 5 7 9 8 0 // vector
+
+
+
+/********extention*********/
+#include <iostream>
+#include <set>
+#include <vector>     // vector
+#include <algorithm> // equal_range, sort
+
+using namespace std;
+
+bool mygreater (int i,int j) { return (i>j); }
+
+int main() {
+
+    int myints[] = {10,20,30,30,20,10,10,20,30};
+    int t[] = {3,4,2,1,6,5,7,9,8,0};
+    vector<int> vec(t,t+10);
+    vector<int> v(myints,myints+9);
+    multiset<int> mul_s(vec.begin(),vec.end());
+    mul_s.insert(vec.begin(),vec.end());
+    pair<multiset<int>::iterator,multiset<int>::iterator> range;
+    range = mul_s.equal_range(6);
+
+    pair<vector<int>::iterator,vector<int>::iterator> range1;
+    sort (v.begin(), v.end(),mygreater);
+    range1 = equal_range(v.begin(),v.end(),20,mygreater);
+    //cout<<*range.first << " " << *range.second << endl;
+    //cout<<*range.first << " " << *range.second << endl;
+
+    cout << "range at positions " << (range1.first - v.begin());
+    cout << " and " << (range1.second - v.begin()) << '\n';
+
+    while(range.first != range.second)
+    {
+        cout<<*range.first<< " " << *range.second;
+        range.first++;
+    }
+
+    cout<<endl;
+    for (auto i : mul_s) // multiset : mul_s
+        cout<< i << " ";
+    cout<<endl;
+    for (auto i : vec)  // vector : vec
+        cout<< i << " ";
+    cout<<endl;
+    for (auto i : v) // multiset : mul_s
+        cout<< i << " ";
+
+    return 0;
+}
+
