@@ -47,7 +47,7 @@ output:
 
 
 
-/********extention*********/
+/*****************/
 #include <iostream>
 #include <set>
 #include <vector>     // vector
