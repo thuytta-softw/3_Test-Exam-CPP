@@ -7,11 +7,27 @@ What happens when you attempt to compile and run the following code?
 #include <vector>
 #include <deque>
 #include <set>
+
+using namespace std;
+
+void myfuntion(int i)
+{
+  cout<<" "<<i;
+}
+
 int main()
 
 {
   int t[]= {10,5,9,6,2,4,7,8,3,1};
-  vector <int> v1(t, t+10);
+  vector <int> v(t, t+10);
+  deque <int> d(t, t+10);
+  set <int> s(t, t+10);
+  
+  for_each(v.begin(), v.end(), myfuntion); // line I
+
+  for_each(d.begin(), d.end(), myfuntion); // line II
+  
+  for_each(s.begin(), s.end(), myfuntion); // line III
 
   return 0;
 }
@@ -20,10 +36,6 @@ A. program outputs: 10 5 9 6 2 4 7 8 3 1 10 5 9 6 2 4 7 8 3 1 1 2 3 4 5 6 7 8 9 
 B. program outputs: 10 5 9 6 2 4 7 8 3 1 10 5 9 6 2 4 7 8 3 1 10 5 9 6 2 4 7 8 3 1
 C. program outputs: 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10
 D. compilation error in line I
-www.vceplus.com - Download A+ VCE (latest) free Open VCE Exams - VCE to PDF Converter - VCE Exam Simulator - VCE Online
 E. compilation error in line III
-Correct Answer: A
-Section: (none)
-Explanation
-Explanation/Reference:
 
+Correct Answer: A
