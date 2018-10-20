@@ -1,0 +1,68 @@
+
+QUESTION 95
+What happens when you attempt to compile and run the following code?
+ #include <iostream>
+ #include <algorithm>
+ #include <vector>
+ using namespace std;
+ void myfunction(int i) {
+ cout << " " << i;
+ }
+ int main() {
+ int t[] = { 10, 5, 9, 6, 2, 4, 7, 8, 3, 1 };
+ vector<int> v1(t, t + 10);
+ copy(t, t+10, v1.end());
+ for_each(v1.begin(), v1.end(), myfunction);
+ return 0;
+ }
+Program outputs:
+A. 10 5 9 6 2 4 7 8 3 1
+B. 10 5 9 6 2 4 7 8 3 1 10 5 9 6 2 4 7 8 3 1
+C. compilation error
+D. runtime exception/segmentation fault
+Correct Answer:D
+
+/******************************************************/
+#include <iostream> 	// std::cout
+#include <algorithm> 	// std:: for_each, std::copy
+#include <vector> 		// std::vector
+
+using namespace std;
+
+void myfunction(int  i) //function type
+{
+	cout << " " << i;
+}
+
+struct myclass{ // function object type
+	void operator() (int i)
+	{
+		cout<<" "<<i;
+	}
+} myobject; // myobect is available of myclass
+
+
+int main()
+{
+	int t[] = {1,2,3,4,5,6,7,8};
+	vector <int> v(8); // if we do not use copy() we can write vector like this: vector <int> v(t, t+8);
+
+	copy (t, t+8, v.begin());// it wil be runtime exception/segmentation fault if copy change to end() like this:  copy(t, t+8, v.end());
+
+	cout<<"Call function \n";
+	//Linear in the distance between first and last: Applies function to each element.
+	for_each(v.begin(), v.end(), myfunction); // myfunction is funtion type
+	
+	cout<<"Call function object \n";
+	for_each(v1.begin(), v1.end(), myobject); // myobject is function object type
+
+	return 0;
+}
+
+console output:
+
+Call function 
+1 2 3 4 5 6 7 8
+
+Call function object
+1 2 3 4 5 6 7 8
